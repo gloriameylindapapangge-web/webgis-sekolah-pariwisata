@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGIS Sekolah dan Pariwisata</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="app-header__text">
+            <h1>WebGIS Sekolah dan Pariwisata</h1>
+            <p>Informasi persebaran sekolah dan objek pariwisata</p>
+        </div>
+        <button id="panelToggle" class="panel-toggle" type="button" aria-expanded="true" aria-controls="sidePanel">
+            Panel
+        </button>
+    </header>
+
+    <main class="app-main">
+        <aside id="sidePanel" class="side-panel">
+
+            <section class="card">
+                <h2>Wilayah Pemetaan</h2>
+                <p id="regionName">Kota Kotamobagu, Sulawesi Utara</p>
+            </section>
+
+            <section class="card">
+                <h2>Filter Kategori</h2>
+                <div class="filter-group" role="radiogroup" aria-label="Filter kategori">
+                    <label class="filter-option">
+                        <input type="radio" name="kategori" value="Semua" checked>
+                        <span>Semua</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="radio" name="kategori" value="Sekolah">
+                        <span>Sekolah</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="radio" name="kategori" value="Pariwisata">
+                        <span>Pariwisata</span>
+                    </label>
+                </div>
+
+                <label class="search-label" for="searchInput">Cari nama objek</label>
+                <input id="searchInput" class="search-input" type="search" placeholder="Ketik nama objek..." autocomplete="off">
+
+                <button id="resetView" class="btn" type="button">Kembali ke posisi awal</button>
+            </section>
+
+            <section class="card">
+                <h2>Ringkasan Data</h2>
+                <ul class="stats">
+                    <li><span class="dot dot--sekolah"></span> Sekolah <strong id="countSekolah">0</strong></li>
+                    <li><span class="dot dot--pariwisata"></span> Pariwisata <strong id="countPariwisata">0</strong></li>
+                    <li>Total objek <strong id="countTotal">0</strong></li>
+                    <li>Tampil di peta <strong id="countVisible">0</strong></li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Informasi Data</h2>
+                <p>Sumber data: <span id="dataSource">Hasil pengumpulan data kelompok (isi sumber data)</span></p>
+                <p>Tahun pengumpulan: <span id="dataYear">2026</span></p>
+            </section>
+
+            <section id="dataNotice" class="card card--warn" hidden>
+                <h2>Perhatian</h2>
+                <p id="dataNoticeText"></p>
+            </section>
+        </aside>
+
+        <div class="map-wrap">
+            <div id="map"></div>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <p>&copy; 2026 Kelompok &hellip; (Kelompok 4) &mdash; Tugas WebGIS Tahap 5 &mdash; Basemap &copy; OpenStreetMap contributors</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
