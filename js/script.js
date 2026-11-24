@@ -37,7 +37,7 @@ const EMPTY_TEXT = "Tidak tersedia";
 // ---------- Peta dan basemap ----------
 const map = L.map("map").setView(CONFIG.center, CONFIG.zoom);
 
-const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: "&copy; OpenStreetMap contributors"
 }).addTo(map);
